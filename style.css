@@ -4,8 +4,12 @@
     box-sizing: border-box;
 
 }
-.background{
+body {
     background-image:url('/bgimg_starry.jpg');
+    background-size: cover;
+}
+.background{
+    /* background-image:url('/bgimg_starry.jpg'); */
     /* background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)); */
     height: 100%;
     width: 100%;
