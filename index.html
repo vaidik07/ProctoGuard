@@ -10,7 +10,7 @@
   <body>
     <div id="particles-js" class="background">
       <h1 class="fw-bold text-white display-1 heading">Proctoguard</h1>
-      <button type="button" class="btn btn-outline-light button_res">Click To Monitor</button>
+      <button type="button" class="btn btn-outline-light button_res" onclick="GoToPage()">Click To Monitor</button>
     </div>
 
     
@@ -23,5 +23,9 @@
 <!--particles js cdn-->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="app.js"></script>
+<script>
+function GoToPage() {
+  window.location.href = './monitor.html';
+}</script>
 </body>
 </html>
