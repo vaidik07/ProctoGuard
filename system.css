@@ -1,0 +1,55 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+body {
+    background-image:url('/bgimg_starry.jpg');
+    background-size: cover;
+    /* height: 100vh; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.background{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.nav_style{
+    width: 100%;
+}
+.active  {
+    border-bottom: 5px solid #dc83ee;
+  }
+.navbar-brand{
+    margin-left: 2rem;
+}
+ul a{
+    margin-left: 6rem;
+}
+
+
+.addsys_btn{
+    top: 50%;
+    left: 40%;
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-20%,-20%);
+}
+.addsys_btn:hover{
+    background-color: #fff; /* Change background color on hover */
+  color: #000; /* Change text color on hover */
+}
+.del_btn{
+    top: 50%;
+    left: 55%;
+}

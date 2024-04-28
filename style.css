@@ -9,12 +9,23 @@ body {
     background-size: cover;
 }
 .background{
-    /* background-image:url('/bgimg_starry.jpg'); */
-    /* background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)); */
     height: 100%;
     width: 100%;
     background-size: cover;
     background-position: center;
+}
+.nav_style{
+    background-color: transparent;
+    width: 100%;
+}
+.active  {
+    border-bottom: 5px solid #dc83ee;
+  }
+.navbar-brand{
+    margin-left: 2rem;
+}
+ul a{
+    margin-left: 6rem;
 }
 .heading{
     top: 50%;
