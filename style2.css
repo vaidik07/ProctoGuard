@@ -8,6 +8,8 @@ body {
     background-image:url('/bgimg_starry.jpg');
     background-size: cover;
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .navbar-brand{
     margin-left: 2rem;
@@ -18,10 +20,22 @@ ul a{
 .nav_style{
     width: 100%;
 }
-.active{
+nav .active{
     border-bottom: 5px solid #dc83ee;
 }
-
+.footer {
+    background-color: #333; /* Choose your preferred background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom of the page */
+}
+.container a{
+    margin-left: 2rem;
+}
+.container a:hover{
+    box-shadow: 0 0 10px #dc83ee;
+}
 /*
 .container{
     width: 50%;

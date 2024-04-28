@@ -7,6 +7,9 @@
 body {
     background-image:url('/bgimg_starry.jpg');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .background{
     height: 100%;
@@ -39,4 +42,17 @@ ul a{
     width: 200px;
     position: absolute;
     transform: translate(-50%,-50%);
+}
+.footer {
+    background-color: #333; /* Choose your preferred background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom of the page */
+}
+.container a{
+    margin-left: 2rem;
+}
+.container a:hover{
+    box-shadow: 0 0 10px #dc83ee;
 }
