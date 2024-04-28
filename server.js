@@ -8,8 +8,8 @@ const mongoose = require('mongoose');
 const logFilePath = "C:/Squid/var/log/squid/access.log";
 let filePosition = 0; // Track the last read position in the file
 
-// Create a WebSocket server on port 3000
-const wss = new WebSocket.Server({ port: 3000 });
+// Create a WebSocket server on port 8080
+const wss = new WebSocket.Server({ port: 8080 });
 
 function extractIPAndLink(data) {
   const lines = data.split('\n'); // Split log data into lines

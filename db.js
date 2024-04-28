@@ -1,8 +1,34 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
+// const port = 3000;
+
+
+
+// Reference to public folder for all static files
+app.use(express.static("public"));
+
+// Middleware to parse request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve the HTML form
+app.get('/', (req, res) => {
+    res.render("index.ejs");
+});
+
+app.get('/monitor', (req, res) => {
+    res.render("monitor.ejs");
+});
+
+app.get('/system', (req, res) => {
+    res.render("system.ejs");
+});
+
+
 
 // Connect to MongoDB using Mongoose
 mongoose.connect('mongodb+srv://vaidikparashar:admin@cluster0.z7dnfok.mongodb.net/ProctoGuard', {
@@ -42,6 +68,6 @@ app.post('/search', async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
