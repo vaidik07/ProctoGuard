@@ -19,20 +19,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item ">
-              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+              <a class="nav-link margin-added active text-white" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link text-white" href="/monitor">Logs</a>
+              <a class="nav-link margin-added text-white" href="/monitor">Logs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/system">Systems</a>
+              <a class="nav-link margin-added text-white" href="/system">Systems</a>
+            </li>
+            <li class="nav-item ">
+              <form class="d-flex  search-bar" action="/search" method="POST"> <!-- Updated form action and method -->
+                <input id="searchInput" class="form-control me-2" type="search" name="ipAddress" placeholder="Search IP" aria-label="Search">
+                <button class="btn btn-outline-light" id="dataForm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </form>
+              <% if(locals.systemNo){ %>
+                <div style="color: #00FF00; text-align: center;" id="systemNoParagraph margin-added"><%=systemNo%>! </div>
+            <% }else{%>
+              <div style="visibility: hidden;" >xyx</div>
+            <% } %>
             </li>
           </ul>
-          <form class="d-flex" action="/search" method="POST"> <!-- Updated form action and method -->
-            <input id="searchInput" class="form-control me-2" type="search" name="ipAddress" placeholder="Search IP" aria-label="Search">
-            <button class="btn btn-outline-light" id="dataForm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </form>
-          
         </div>
       </div>
     </nav>

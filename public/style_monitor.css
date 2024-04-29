@@ -11,6 +11,16 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+.navbar{
+    padding: 1.2rem 0;
+}
+.margin-added{
+    margin-left: 12rem;
+}
+.search-bar{
+    margin: 10px;
+    margin-left: 8rem;
+}
 .navbar-brand{
     margin-left: 2rem;
 }

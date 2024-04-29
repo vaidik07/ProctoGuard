@@ -5,9 +5,6 @@ const session = require('express-session');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// const port = 3000;
-
-
 
 // Reference to public folder for all static files
 app.use(express.static("public"));
@@ -17,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve the HTML form
 app.get('/', (req, res) => {
+    // Render index.ejs without passing systemNo
     res.render("index.ejs");
 });
 
@@ -27,8 +25,6 @@ app.get('/monitor', (req, res) => {
 app.get('/system', (req, res) => {
     res.render("system.ejs");
 });
-
-
 
 // Connect to MongoDB using Mongoose
 mongoose.connect('mongodb+srv://vaidikparashar:admin@cluster0.z7dnfok.mongodb.net/')
@@ -44,20 +40,17 @@ const systemNoSchema = new mongoose.Schema({
 // Create a model based on the schema
 const SystemNo = mongoose.model('SystemNo', systemNoSchema);
 
-// Middleware to parse JSON requests
-//app.use(express.json());
-
 // Route to handle search POST requests
 app.post('/search', async (req, res) => {
   const { ipAddress } = req.body;
-  ipAddress.toString();
   try {
-    const result = await SystemNo.findOne({ ip_address: ipAddress });
-    if (result) {
-      res.json({ systemNo: result.system_no });
-    } else {
-      console.log("System not found");
+    if (!ipAddress) {
+      // If no ipAddress provided, render the original index page
+      res.render("index.ejs");
     }
+    const result = await SystemNo.findOne({ ip_address: ipAddress });
+    const ans=result ? "System No. is "+result.system_no :"System not found!"; // Check if result exists
+    res.render("index.ejs", { systemNo: ans }); // Pass ans to index.ejs
   } catch (error) {
     console.error('Error searching by IP address:', error);
     res.status(500).json({ error: 'An error occurred while searching.' });

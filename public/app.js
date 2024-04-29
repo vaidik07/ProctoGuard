@@ -43,3 +43,10 @@ particlesJS.load('particles-js', 'particles.json', function() {
     });
   });
   
+// for ejs p tag for system no.
+  window.onload = function() {
+    const systemNoParagraph = document.getElementById('systemNoParagraph');
+    if (locals.systemNo ) {
+        systemNoParagraph.remove();
+    }
+};

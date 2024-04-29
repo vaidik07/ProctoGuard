@@ -12,28 +12,37 @@
 <body>
      <!--Adding navbar-->
      <nav class="navbar navbar-expand-lg border-body nav_style"   >
-        <div class="container-fluid d-flex justify-content-evenly">
-          <a class="navbar-brand text-white" href="/">ProctoGuard</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-evenly">
-              <li class="nav-item ">
-                <a class="nav-link  text-white" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link text-white" href="/monitor">Logs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active text-white" href="/system">Systems</a>
-              </li>
-            </ul>
-            
-            </form>
-          </div>
+      <div class="container-fluid d-flex justify-content-evenly">
+        <a class="navbar-brand text-white" href="/">ProctoGuard</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item ">
+              <a class="nav-link margin-added active text-white" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link margin-added text-white" href="/monitor">Logs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link margin-added text-white" href="/system">Systems</a>
+            </li>
+            <li class="nav-item ">
+              <form class="d-flex  search-bar" action="/search" method="POST"> <!-- Updated form action and method -->
+                <input id="searchInput" class="form-control me-2" type="search" name="ipAddress" placeholder="Search IP" aria-label="Search">
+                <button class="btn btn-outline-light" id="dataForm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </form>
+              <% if(locals.systemNo){ %>
+                <div style="color: #00FF00; text-align: center;" id="systemNoParagraph margin-added"><%=systemNo%>! </div>
+            <% }else{%>
+              <div style="visibility: hidden;" >xyx</div>
+            <% } %>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
       <button type="button" class="addsys_btn">Add New System</button>
       <button type="button" class="del_btn addsys_btn ">Delete System</button>
