@@ -53,7 +53,7 @@ app.use(express.json());
 // Route to handle search POST requests
 app.post('/search', async (req, res) => {
   const { ipAddress } = req.body;
-
+  ipAddress.toString();
   try {
     const result = await SystemNo.findOne({ ip_address: ipAddress });
     if (result) {
