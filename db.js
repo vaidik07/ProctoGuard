@@ -31,24 +31,21 @@ app.get('/system', (req, res) => {
 
 
 // Connect to MongoDB using Mongoose
-mongoose.connect('mongodb+srv://vaidikparashar:admin@cluster0.z7dnfok.mongodb.net/ProctoGuard', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://vaidikparashar:admin@cluster0.z7dnfok.mongodb.net/')
 .then(() => console.log('Connected to MongoDB Atlas'))
 .catch((error) => console.error('Error connecting to MongoDB Atlas:', error));
 
 // Define a schema for the system_no collection
 const systemNoSchema = new mongoose.Schema({
-  ip_address: { type: String, required: true, unique: true },
-  system_no: { type: Number, required: true },
+  ip_address: String,
+  system_no: String,
 });
 
 // Create a model based on the schema
 const SystemNo = mongoose.model('SystemNo', systemNoSchema);
 
 // Middleware to parse JSON requests
-app.use(express.json());
+//app.use(express.json());
 
 // Route to handle search POST requests
 app.post('/search', async (req, res) => {
@@ -59,7 +56,7 @@ app.post('/search', async (req, res) => {
     if (result) {
       res.json({ systemNo: result.system_no });
     } else {
-      res.json({ systemNo: null });
+      console.log("System not found");
     }
   } catch (error) {
     console.error('Error searching by IP address:', error);
