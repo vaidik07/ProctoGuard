@@ -48,8 +48,11 @@ i:hover {
 #logContainer{
     color: #00FF00;
     background-color: rgba(0, 0, 0, 0.635);
-    padding: 10%;
+    padding: 
+    10%;
 }
+
+
 /*
 .container{
     width: 50%;

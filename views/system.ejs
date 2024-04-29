@@ -34,13 +34,34 @@
           </div>
         </div>
       </nav>
+      
+      <div id="containForm">
+      <form action="/add" method="post" id="addForm">
+        <h1>Add a System</h1>
+        <label for="ipAddress">IP Address</label>
+        <input type="text" id="ipAddress" name="ipAddress" required><br><br>
 
-      <button type="button" class="addsys_btn">Add New System</button>
-      <button type="button" class="del_btn addsys_btn ">Delete System</button>
-      <div id="particles-js" class="background">
-        
-      </div>
 
+        <label for="systemnumber">System Number</label>
+        <input type="text" id="systemNo" name="systemNo" required><br><br>
+
+        <button type="submit">Submit</button>
+
+      </form>
+
+      <form action="/delete" method="post" id="deleteForm">
+        <h1>Delete a System</h1>
+        <label for="ipAddress">IP Address</label>
+        <input type="text" id="ipAddress" name="ipAddress" required><br><br>
+
+
+        <label for="systemNo">System Number</label>
+        <input type="text" id="systemNo" name="systemNo" required><br><br>
+
+        <button type="submit">Submit</button>
+
+      </form>
+    </div>
       <!--footer-->
 <footer class="footer">
     <div class="container ">
