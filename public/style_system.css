@@ -86,3 +86,22 @@ i{
 i:hover {
     transform: scale(1.2); /* Zoom in to 120% of original size */
 }
+
+form{
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 50px auto;
+    background:  #142132; ;
+    width: 40%;
+    padding: 40px;
+    height: 100%;
+    border-radius: 5%;
+    color: #fff;
+}
+
+#containForm {
+    margin-top: auto;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
