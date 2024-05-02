@@ -1,4 +1,4 @@
-const ws = new WebSocket("ws://192.168.29.102:8080");
+const ws = new WebSocket("ws://192.168.251.99:8080");
 
       // WebSocket event handling
       ws.onopen = () => {

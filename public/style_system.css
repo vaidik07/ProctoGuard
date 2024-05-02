@@ -21,16 +21,16 @@ body {
     background-size: cover;
     background-position: center;
 }
-/* .navbar{
+.navbar{
     padding: 1.2rem 0;
-} */
-/* .margin-added{
+} 
+.margin-added{
     margin-left: 12rem;
-} */
-/* .search-bar{
+} 
+.search-bar{
     margin: 10px;
     margin-left: 8rem;
-} */
+} 
 .nav_style{
     background-color: #142132;
     width: 100%;
@@ -86,22 +86,37 @@ i{
 i:hover {
     transform: scale(1.2); /* Zoom in to 120% of original size */
 }
-
-form{
+.form{
     font-size: 1.2rem;
-    text-align: center;
-    margin: 50px auto;
-    background:  #142132; ;
-    width: 40%;
+    text-align: centre;
+    margin: 100px;
+    background:  #142132;
+    /* width: 80%;/ */
     padding: 40px;
-    height: 100%;
     border-radius: 5%;
     color: #fff;
 }
-
 #containForm {
     margin-top: auto;
     align-items: center;
     display: flex;
     gap: 10px;
+}
+/* .form_content{
+    margin-left: 4rem;
+    align-content: center;
+} */
+
+.form_title{
+    align-items: center;
+    justify-content: center;
+    left: 2rem;
+    padding-bottom: 2rem;
+}
+form{
+    text-align: center;
+}
+form label{
+    display: inline-block;
+    width: 150px;
 }
